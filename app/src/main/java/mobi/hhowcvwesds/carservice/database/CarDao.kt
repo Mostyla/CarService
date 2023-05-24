@@ -10,10 +10,13 @@ interface CarDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(car: Car)
 
-
     @Query("SELECT * FROM ${Car.TABLE_NAME}")
-     fun getAllCarsFlow(): Flow<List<Car>>
+    fun getAllCarsFlow(): Flow<List<Car>>
 
-     @Delete
-     fun deleteCar(car: Car): Int
+    @Delete
+    fun deleteCar(car: Car): Int
+
+    @Update(onConflict = OnConflictStrategy.REPLACE)
+    fun updateCar(car: Car)
+
 }

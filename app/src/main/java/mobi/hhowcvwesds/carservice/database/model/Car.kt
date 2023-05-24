@@ -8,12 +8,15 @@ import mobi.hhowcvwesds.carservice.database.model.Car.Companion.TABLE_NAME
     tableName = TABLE_NAME
 )
 data class Car(
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
+    val id: Int? = null,
     val carName: String,
     val carNumber: String,
     val serviceDescription: String
 ) {
+
     companion object {
         const val TABLE_NAME = "CAR"
     }
 }
+

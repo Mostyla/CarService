@@ -10,11 +10,11 @@ import mobi.hhowcvwesds.carservice.database.model.Car
 
 class AppViewModel(private val appDataBase: AppDataBase): ViewModel() {
 
-    private val scope = CoroutineScope(Dispatchers.IO)
+    private val viewModelScope = CoroutineScope(Dispatchers.IO)
 
     fun insertCar(carName: String, carNumber: String, serviceDescription: String){
-        val car = Car(carName, carNumber, serviceDescription)
-        scope.launch {
+        val car = Car(carName = carName, carNumber = carNumber, serviceDescription = serviceDescription)
+        viewModelScope.launch {
             appDataBase.carDao().insert(car)
         }
     }
@@ -25,4 +25,7 @@ class AppViewModel(private val appDataBase: AppDataBase): ViewModel() {
 
     fun getAllCars() = appDataBase.carDao().getAllCarsFlow().asLiveData()
 
+    fun updateCar(car: Car) {
+        appDataBase.carDao().updateCar(car)
+    }
 }

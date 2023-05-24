@@ -9,4 +9,6 @@
     <string name="car_added">Car added!</string>
     <string name="fill_the_form">Please, fill the form!</string>
     <string name="delete">Delete</string>
+    <string name="txt_update">Update</string>
+    <string name="car_data_is_update">Car data is updated!</string>
 </resources>
