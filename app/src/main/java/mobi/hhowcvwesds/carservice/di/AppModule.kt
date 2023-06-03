@@ -18,7 +18,7 @@ val databaseModule = module {
             .fallbackToDestructiveMigration()
             .build()
     }
-    viewModel { //TODO: Разделить DB DI и основной модуль приложения
+    viewModel {
         AppViewModel(App().appDataBase)
     }
 }
