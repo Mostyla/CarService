@@ -2,6 +2,7 @@ package mobi.hhowcvwesds.carservice
 
 import android.app.Application
 import mobi.hhowcvwesds.carservice.database.AppDataBase
+import mobi.hhowcvwesds.carservice.di.appModule
 import mobi.hhowcvwesds.carservice.di.databaseModule
 import org.koin.android.ext.android.inject
 import org.koin.android.ext.koin.androidContext
@@ -21,7 +22,8 @@ class App : Application() {
         startKoin {
             androidContext(this@App)
             modules(
-                databaseModule
+                databaseModule,
+                appModule
             )
         }
     }
