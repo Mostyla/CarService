@@ -2,16 +2,15 @@ package mobi.hhowcvwesds.carservice.ui.dialog
 
 import android.app.Activity
 import android.os.Bundle
-import android.util.Log
 import mobi.hhowcvwesds.carservice.database.model.Car
 import mobi.hhowcvwesds.carservice.databinding.DialogUpdateCarBinding
-import mobi.hhowcvwesds.carservice.viewmodel.AppViewModel
+import mobi.hhowcvwesds.carservice.repository.CarRepo
 
 
 class DialogUpdateCar(
     private val activity: Activity,
     val car: Car,
-    private val viewModel: AppViewModel
+    private val viewModel: CarRepo
 ) :
     BaseDialog<DialogUpdateCarBinding>(DialogUpdateCarBinding::inflate, activity) {
 

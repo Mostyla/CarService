@@ -34,14 +34,14 @@ class CarListActivity : BaseActivity<ActivityCarListBinding>(ActivityCarListBind
             when (action) {
                 CarListHolder.CarHolderAction.OPEN -> {}
                 CarListHolder.CarHolderAction.EDIT -> {
-                    DialogUpdateCar(this, car, viewModel).show()
+                    DialogUpdateCar(this, car, carRepo).show()
                 }
                 CarListHolder.CarHolderAction.DELETE -> {
-                    viewModel.deleteCar(car)
+                    carRepo.deleteCar(car)
                 }
             }
         }
-        viewModel.getAllCars().observe(this) {
+        carRepo.getAllCars().observe(this) {
             (binding.rcViewCars.adapter as? CarListAdapter)?.insertCars(it)
         }
 

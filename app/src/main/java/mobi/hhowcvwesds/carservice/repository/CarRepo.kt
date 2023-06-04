@@ -1,8 +1,5 @@
-package mobi.hhowcvwesds.carservice.viewmodel
+package mobi.hhowcvwesds.carservice.repository
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -10,7 +7,7 @@ import kotlinx.coroutines.launch
 import mobi.hhowcvwesds.carservice.database.AppDataBase
 import mobi.hhowcvwesds.carservice.database.model.Car
 
-class AppViewModel(private val appDataBase: AppDataBase): ViewModel() {
+class CarRepo(private val appDataBase: AppDataBase){
 
     private val viewModelScope = CoroutineScope(Dispatchers.IO)
 

@@ -34,7 +34,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
         val serviceDescription = binding.etServiceDescription.text.toString()
 
         if (carName.isNotEmpty() && carNum.isNotEmpty() && serviceDescription.isNotEmpty()) {
-            viewModel.insertCar(carName, carNum, serviceDescription)
+            carRepo.insertCar(carName, carNum, serviceDescription)
             binding.etCarName.text.clear()
             binding.etCarNumber.text.clear()
             binding.etServiceDescription.text.clear()
