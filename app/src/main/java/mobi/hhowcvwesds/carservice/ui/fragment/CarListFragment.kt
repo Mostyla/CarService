@@ -1,47 +1,50 @@
-package mobi.hhowcvwesds.carservice.ui.activity
+package mobi.hhowcvwesds.carservice.ui.fragment
 
 import android.os.Bundle
+import android.view.View
 import androidx.core.widget.doOnTextChanged
 import androidx.recyclerview.widget.LinearLayoutManager
-import mobi.hhowcvwesds.carservice.databinding.ActivityCarListBinding
+import mobi.hhowcvwesds.carservice.databinding.FragmentCarListBinding
 import mobi.hhowcvwesds.carservice.ui.adapter.CarListAdapter
 import mobi.hhowcvwesds.carservice.ui.adapter.holder.CarListHolder
 import mobi.hhowcvwesds.carservice.ui.dialog.DialogUpdateCar
 
 
-class CarListActivity : BaseActivity<ActivityCarListBinding>(ActivityCarListBinding::inflate) {
+class CarListFragment : BaseFragment<FragmentCarListBinding>(FragmentCarListBinding::inflate) {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         setUpRecyclerView()
 
         initSearchDara()
 
         initClickListeners()
+
     }
 
     private fun initClickListeners() {
         binding.includeAppBar.btnBack.setOnClickListener {
-            onBackPressedDispatcher.onBackPressed()
+            requireActivity().onBackPressedDispatcher.onBackPressed()
         }
     }
 
 
     private fun setUpRecyclerView() {
-        binding.rcViewCars.layoutManager = LinearLayoutManager(this@CarListActivity)
+        binding.rcViewCars.layoutManager = LinearLayoutManager(requireContext())
         binding.rcViewCars.adapter = CarListAdapter().setOnClickListener { action, car ->
             when (action) {
                 CarListHolder.CarHolderAction.OPEN -> {}
                 CarListHolder.CarHolderAction.EDIT -> {
-                    DialogUpdateCar(this, car, carRepo).show()
+                    DialogUpdateCar(requireActivity(), car, carRepo).show()
                 }
                 CarListHolder.CarHolderAction.DELETE -> {
                     carRepo.deleteCar(car)
                 }
             }
         }
-        carRepo.getAllCars().observe(this) {
+        carRepo.getAllCars().observe(requireActivity()) {
             (binding.rcViewCars.adapter as? CarListAdapter)?.insertCars(it)
         }
 

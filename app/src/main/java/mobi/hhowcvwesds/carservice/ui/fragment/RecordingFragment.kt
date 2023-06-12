@@ -1,16 +1,19 @@
-package mobi.hhowcvwesds.carservice.ui.activity
+package mobi.hhowcvwesds.carservice.ui.fragment
 
 import android.os.Bundle
+import android.view.View
+import androidx.navigation.fragment.findNavController
 import mobi.hhowcvwesds.carservice.R
-import mobi.hhowcvwesds.carservice.databinding.ActivityMainBinding
+import mobi.hhowcvwesds.carservice.databinding.FragmentRecordingBinding
 import mobi.hhowcvwesds.carservice.helpers.IntentHelper
 
 
-class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::inflate) {
+class RecordingFragment :
+    BaseFragment<FragmentRecordingBinding>(FragmentRecordingBinding::inflate) {
 
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         setUpListeners()
     }
@@ -22,7 +25,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
         }
 
         binding.btnShowCarList.setOnClickListener {
-            IntentHelper.navigateToCarList(this)
+            findNavController().navigate(R.id.action_recordingFragment_to_carListFragment)
         }
 
     }
