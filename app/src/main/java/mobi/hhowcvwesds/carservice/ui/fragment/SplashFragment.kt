@@ -33,7 +33,7 @@ class SplashFragment : BaseFragment<FragmentSplashBinding>(FragmentSplashBinding
     private fun navigateToMainScreen() {
         scope.launch {
             delay(3000)
-            findNavController().navigate(R.id.action_splash_screen_to_recordingFragment)
+            findNavController().navigate(R.id.action_splash_screen_to_onboardingFragment)
         }
     }
 

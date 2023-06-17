@@ -15,4 +15,10 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="the_best_service_app">THE BEST \n Service App</string>
+    <string name="skip_txt">Skip</string>
+    <string name="get_started_txt">Get Started</string>
+    <string name="onboarding_description_first">Our car service is a reliable partner for everyone who needs high-quality repair and maintenance of their car</string>
+    <string name="onboarding_description_second">We offer a wide range of services - from diagnostics to repair of complex systems and assemblies, so that your car is always in excellent condition</string>
+    <string name="onboarding_description_third">Our team of professionals has many years of experience working with cars of different brands and models, which guarantees high quality work</string>
+    <string name="onboarding_description_fourth">We value each of our customers and strive to provide them with the best service at an affordable price so that you can enjoy a safe and comfortable ride</string>
 </resources>

@@ -14,9 +14,9 @@ interface CarDao {
     fun getAllCarsFlow(): Flow<List<Car>>
 
     @Delete
-    fun deleteCar(car: Car): Int
+    suspend fun deleteCar(car: Car): Int
 
     @Update(onConflict = OnConflictStrategy.REPLACE)
-    fun updateCar(car: Car)
+    suspend fun updateCar(car: Car)
 
 }

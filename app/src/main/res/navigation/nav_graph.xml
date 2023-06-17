@@ -12,6 +12,9 @@
         <action
             android:id="@+id/action_splash_screen_to_recordingFragment"
             app:destination="@id/recordingFragment" />
+        <action
+            android:id="@+id/action_splash_screen_to_onboardingFragment"
+            app:destination="@id/onboardingFragment" />
     </fragment>
     <fragment
         android:id="@+id/recordingFragment"
@@ -26,5 +29,14 @@
         android:name="mobi.hhowcvwesds.carservice.ui.fragment.CarListFragment"
         android:label="fragment_car_list"
         tools:layout="@layout/fragment_car_list" />
+    <fragment
+        android:id="@+id/onboardingFragment"
+        android:name="mobi.hhowcvwesds.carservice.ui.fragment.onboarding.OnboardingFragment"
+        android:label="fragment_onboarding"
+        tools:layout="@layout/fragment_onboarding" >
+        <action
+            android:id="@+id/action_onboardingFragment_to_recordingFragment"
+            app:destination="@id/recordingFragment" />
+    </fragment>
 
 </navigation>

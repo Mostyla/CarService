@@ -9,5 +9,9 @@
     <color name="white">#FFFFFFFF</color>
     <color name="color_hint">#59FFFFFF</color>
 
+    <color name="blue_color">#3671E4</color>
     <color name="main_bg_color">#26272E</color>
+    <color name="dots_selected_color">#3671E4</color>
+    <color name="dots_unselected_color">#E5EBFF</color>
+    <color name="grey_color">#8A91A8</color>
 </resources>

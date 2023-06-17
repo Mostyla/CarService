@@ -8,9 +8,9 @@ import mobi.hhowcvwesds.carservice.repository.CarRepo
 
 
 class DialogUpdateCar(
-    private val activity: Activity,
+    activity: Activity,
     val car: Car,
-    private val viewModel: CarRepo
+    private val carRepository: CarRepo
 ) :
     BaseDialog<DialogUpdateCarBinding>(DialogUpdateCarBinding::inflate, activity) {
 
@@ -53,7 +53,7 @@ class DialogUpdateCar(
                 serviceDescription = carDescription
             )
 
-        viewModel.updateCar(updatedCar)
+        carRepository.updateCar(updatedCar)
 
         dismiss()
 
